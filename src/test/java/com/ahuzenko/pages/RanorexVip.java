@@ -3,19 +3,17 @@ package com.ahuzenko.pages;
 
 import java.util.List;
 
-import com.thoughtworks.xstream.mapper.Mapper;
+
 import net.thucydides.core.annotations.DefaultUrl;
-import org.apache.commons.jxpath.ri.model.beans.NullPointer;
-import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 import net.thucydides.core.annotations.findby.FindBy;
 
 import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.support.ui.Select;
+
 
 @DefaultUrl("http://www.ranorex.com/web-testing-examples/vip/")
 public class RanorexVip extends PageObject{
