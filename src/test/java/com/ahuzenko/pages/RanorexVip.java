@@ -2,7 +2,11 @@ package com.ahuzenko.pages;
 
 
 import java.util.List;
+
+import com.thoughtworks.xstream.mapper.Mapper;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.apache.commons.jxpath.ri.model.beans.NullPointer;
+import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +15,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.findby.FindBy;
 
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.support.ui.Select;
 
 @DefaultUrl("http://www.ranorex.com/web-testing-examples/vip/")
 public class RanorexVip extends PageObject{
@@ -22,6 +27,10 @@ public class RanorexVip extends PageObject{
      */
     @FindBy(id = "FirstName")
     private WebElementFacade firstName;
+
+    public RanorexVip() {
+    }
+
     public void setFirstNameFieldValue(String value){
         firstName.type(value);
     }
@@ -37,7 +46,7 @@ public class RanorexVip extends PageObject{
      * Button [Add] - register user
      */
     @FindBy(id = "Add")
-    private WebElement add;
+    private WebElementFacade add;
     public void addUserToTheVIPList()
     {
         add.click();
@@ -47,7 +56,7 @@ public class RanorexVip extends PageObject{
      * Button [Delete] - Delete user
      */
     @FindBy(id = "Delete")
-    private WebElement delete;
+    private WebElementFacade delete;
     public void deleteUserFromList()
     {
         delete.click();
@@ -57,18 +66,18 @@ public class RanorexVip extends PageObject{
      * ListItem [Category] - {Other*, Music, Movie, Science, Sport, Politics}
      */
     @FindBy(id = "Category")
-    private WebElement category;
+    private WebElementFacade category;
     public void selectCategoryFromList(String categoryValue)
     {
-       category.findElement(By.xpath("./option[@value='"+categoryValue+"']") ).click();
 
+        category.selectByValue(categoryValue);
     }
 
     /**
      * Radio [Gender] - {Female*, Male}
      */
     @FindBy(id = "Gender")
-    private WebElement gender;
+    private WebElementFacade gender;
     public void selectGender(String genderValue)
     {
        gender.findElement(By.xpath("//input[@value='"+genderValue+"']")).click();
@@ -78,7 +87,7 @@ public class RanorexVip extends PageObject{
      * Table [Vips] - List of registered bip users
      */
     @FindBy(id = "VIPs")
-    private WebElement vips;
+    private WebElementFacade vips;
     public String findUserInTheVIPTable(String searchString, String newGender, String newCategory)
     {
         List<WebElement> vipRows = vips.findElements(By.xpath("./tbody/tr"));
@@ -122,7 +131,7 @@ public class RanorexVip extends PageObject{
      */
 
     @FindBy(id = "Load")
-    private WebElement load;
+    private WebElementFacade load;
     public void loadVIPList()
     {
         load.click();
@@ -133,25 +142,25 @@ public class RanorexVip extends PageObject{
      */
 
     @FindBy(id = "Save")
-    private WebElement save;
+    private WebElementFacade save;
 
     /**
      * Button [Clear] - clear table of loaded users on the page.
      */
 
     @FindBy(id = "Clear")
-    private WebElement clear;
+    private WebElementFacade clear;
 
     /**
      * Label [count] - Shows number of loaded users
      */
 
     @FindBy(id = "count")
-    private WebElement count;
+    private WebElementFacade count;
 
 
     @FindBy(id = "connection")
-    private WebDriver connection;
+    private WebElementFacade connection;
 
 
 
