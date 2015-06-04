@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            Idea
+        </th>
+        <th>
+            Pre-condition
+        </th>
+        <th>
+           Actions
+        </th>
+        <th>
+            Expected results
+        </th>
+        <th>
+            Auto test name
+        </th>
+    </tr>
+    <tr>
+        <td>
+            1
+        </td>
+        <td>
+            Search from the main page returns <br>
+            correct number of result links
+        </td>
+        <td>
+            Home page of intel.com(en) is opened
+        </td>
+        <td>
+            <li>
+                Input "lineage 2" string into Search field
+            </li>
+            <li>
+                Click on [Search] button
+            </li>
+        </td>
+        <td>
+            Search result page is opened. 5 results are displayed on it.
+        </td>
+        <td>
+            SearchTest->searchFromHomePage
+        </td>
+    </tr>
+    <tr>
+        <td>
+            2
+        </td>
+        <td>
+            Non-existing data request <br>returns correct responce
+        </td>
+        <td>
+            Search page of intel.com(en) is opened
+        </td>
+        <td>
+            <li>
+                Input "auishrauhsr82347 sdfsdfmnkjasqoiwu4nasd" string into Search field
+            </li>
+            <li>
+                Click on [Search] button
+            </li>
+        </td>
+        <td>
+            Search result page is opened. 0 results are displayed on it.
+        </td>
+        <td>
+            SearchTest->invalidSearch
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Search results are relevant <br>to search criteria
+        </td>
+        <td>
+            Search page of intel.com(en) is opened
+        </td>
+        <td>
+            <li>
+                Input "desktop board ca810e" string into Search field
+            </li>
+            <li>
+                Click on [Search] button
+            </li>
+            <li>
+                Click on on first found item's link
+            </li>
+            <li>
+                Observe result page
+            </li>
+
+        </td>
+        <td>
+            "desktop board ca810e" string exists on the page.
+        </td>
+        <td>
+            SearchTest->checkRelevantSearchResult
+        </td>
+
+    </tr>
+</table>
+<br>
+
+<table border="1">
+    <tr>
+        <th>Test parameter</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Home Page URL</td>
+        <td>http://www.intel.com/content/www/us/en/homepage.html</td>
+    </tr>
+    <tr>
+        <td>Search Page URL</td>
+        <td>http://www.intel.com/content/www/us/en/search.html</td>
+    </tr>
+
+</table>
+
+
+
+</body>
+</html>
